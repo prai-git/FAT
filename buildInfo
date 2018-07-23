@@ -1,0 +1,12 @@
+serverless deploy --stage dev
+
+User - 
+  POST - https://r25yxizmpl.execute-api.us-east-1.amazonaws.com/dev/api/v1/users
+  PUT - https://r25yxizmpl.execute-api.us-east-1.amazonaws.com/dev/api/v1/users/{id}
+  DELETE - https://r25yxizmpl.execute-api.us-east-1.amazonaws.com/dev/api/v1/users/{id}
+  GET - https://r25yxizmpl.execute-api.us-east-1.amazonaws.com/dev/api/v1/users/{id}
+
+## create User
+curl -d '{"id":"11","uuid":"1234","email":"prai@gmail.com","name":"prai","phone":"9764","status":"1","create_time":"2018-03-09 21:04:07","modified_time":"2018-03-10 06:43:59","creator_id":"1","modifier_id":"2"}' -X POST https://r25yxizmpl.execute-api.us-east-1.amazonaws.com/dev/api/v1/users/
+## update User
+

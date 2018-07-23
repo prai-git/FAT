@@ -1,0 +1,30 @@
+service: pt360-ses-service
+provider:
+  name: aws
+  runtime: nodejs6.10
+  stage: dev
+  region: us-east-1
+
+
+plugins:
+  - serverless-webpack
+
+functions:
+  sendMail:
+    handler: handler.sendMail
+    description: Send email using SES service.
+    memorySize: 1024
+    timeout: 5
+    events:
+      - http:
+          path: api/v1/ses/email/
+          method: post
+          cors: true
+
+  sendMessage:
+    handler: handler.sendMessage
+    events:
+      - http:
+          path: api/v1/sns/message/
+          method: post
+          cors: true

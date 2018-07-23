@@ -1,0 +1,287 @@
+# Welcome to serverless. Read the docs
+# https://serverless.com/framework/docs/
+
+# Serverless.yml is the configuration the CLI
+# uses to deploy your code to your provider of choice
+
+# The `service` block is the name of the service
+service: phototainmentServices
+
+# The `provider` block defines where your service will be deployed
+provider:
+  name: aws
+  runtime: nodejs6.10
+
+# The `functions` block defines what code to deploy
+functions:
+  createUser:
+    handler: handler.createUser
+    events:
+      - http:
+          path: api/v1/users/
+          method: post
+          cors: true
+
+  updateUser:
+    handler: handler.updateUser
+    events:
+      - http:
+          path: api/v1/users/
+          method: put
+          cors: true
+
+  deleteUser:
+    handler: handler.deleteUser
+    events:
+      - http:
+          path: api/v1/users/{userId}
+          method: delete
+          cors: true
+
+  getUserById:
+    handler: handler.getUserById
+    events:
+      - http:
+          path: api/v1/users/{userId}
+          method: get
+          cors: true
+
+  getUserByName:
+    handler: handler.getUserByName
+    events:
+      - http:
+          path: api/v1/users/names/{userName}
+          method: get
+          cors: true
+
+  getUserByEmail:
+    handler: handler.getUserByEmail
+    events:
+      - http:
+          path: api/v1/users/emails/{userEmail}
+          method: get
+          cors: true
+  
+  createUserDetails:
+    handler: handler.createUserDetails
+    events:
+      - http:
+          path: api/v1/users/{userId}/userDetails/
+          method: post
+          cors: true
+
+  updateUserDetails:
+    handler: handler.updateUserDetails
+    events:
+      - http:
+          path: api/v1/users/{userId}/userDetails/
+          method: put
+          cors: true
+
+  deleteUserDetails:
+    handler: handler.deleteUserDetails
+    events:
+      - http:
+          path: api/v1/users/{userId}/details/{userDetailsId}
+          method: delete
+          cors: true
+
+  getUserDetailsById:
+    handler: handler.getUserDetailsById
+    events:
+      - http:
+          path: api/v1/users/{userId}/details/{userDetailsId}
+          method: get
+          cors: true
+
+  createEvent:
+    handler: handler.createEvent
+    events:
+      - http:
+          path: api/v1/users/{userId}/events/
+          method: post
+          cors: true
+
+  updateEvent:
+    handler: handler.updateEvent
+    events:
+      - http:
+          path: api/v1/users/{userId}/events/
+          method: put
+          cors: true
+
+  deleteEvent:
+    handler: handler.deleteEvent
+    events:
+      - http:
+          path: api/v1/users/{userId}/events/{eventId}
+          method: delete
+          cors: true
+
+  getEventById:
+    handler: handler.getEventById
+    events:
+      - http:
+          path: api/v1/users/{userId}/events/{eventId}
+          method: get
+          cors: true
+
+  createImage:
+    handler: handler.createImage
+    events:
+      - http:
+          path: api/v1/users/{userId}/events/{eventId}/images/
+          method: post
+          cors: true
+
+  updateImage:
+    handler: handler.updateImage
+    events:
+      - http:
+          path: api/v1/users/{userId}/events/{eventId}/images/
+          method: put
+          cors: true
+
+  deleteImage:
+    handler: handler.deleteImage
+    events:
+      - http:
+          path: api/v1/users/{userId}/events/{eventId}/images/{imageId}
+          method: delete
+          cors: true
+
+  getImageById:
+    handler: handler.getImageById
+    events:
+      - http:
+          path: api/v1/users/{userId}/events/{eventId}/images/{imageId}
+          method: get
+          cors: true
+
+  createSubscriber:
+    handler: handler.createSubscriber
+    events:
+      - http:
+          path: api/v1/users/{userId}/subscribers/
+          method: post
+          cors: true
+
+  updateSubscriber:
+    handler: handler.updateSubscriber
+    events:
+      - http:
+          path: api/v1/users/{userId}/subscribers/
+          method: put
+          cors: true
+
+  deleteSubscriber:
+    handler: handler.deleteSubscriber
+    events:
+      - http:
+          path: api/v1/users/{userId}/subscribers/{subscriberId}
+          method: delete
+          cors: true
+
+  getSubscriberById:
+    handler: handler.getSubscriberById
+    events:
+      - http:
+          path: api/v1/users/{userId}/subscribers/{subscriberId}
+          method: get
+          cors: true
+
+  createSubscriberDetails:
+    handler: handler.createSubscriberDetails
+    events:
+      - http:
+          path: api/v1/users/{userId}/subscribers/{subscriberId}/details/
+          method: post
+          cors: true
+
+  updateSubscriberDetails:
+    handler: handler.updateSubscriberDetails
+    events:
+      - http:
+          path: api/v1/users/{userId}/subscribers/{subscriberId}/details/
+          method: put
+          cors: true
+
+  deleteSubscriberDetails:
+    handler: handler.deleteSubscriberDetails
+    events:
+      - http:
+          path: api/v1/users/{userId}/subscribers/{subscriberId}/details/{detailsId}
+          method: delete
+          cors: true
+
+  getSubscriberDetailsById:
+    handler: handler.getSubscriberDetailsById
+    events:
+      - http:
+          path: api/v1/users/{userId}/subscribers/{subscriberId}/details/{detailsId}
+          method: get
+          cors: true
+
+  createSubscriberPage:
+    handler: handler.createSubscriberPage
+    events:
+      - http:
+          path: api/v1/users/{userId}/subscribers/{subscriberId}/pages/
+          method: post
+          cors: true
+
+  updateSubscriberPage:
+    handler: handler.updateSubscriberPage
+    events:
+      - http:
+          path: api/v1/users/{userId}/subscribers/{subscriberId}/pages/
+          method: put
+          cors: true
+
+  deleteSubscriberPage:
+    handler: handler.deleteSubscriberPage
+    events:
+      - http:
+          path: api/v1/users/{userId}/subscribers/{subscriberId}/pages/{pageId}
+          method: delete
+          cors: true
+
+  getSubscriberPageById:
+    handler: handler.getSubscriberPageById
+    events:
+      - http:
+          path: api/v1/users/{userId}/subscribers/{subscriberId}/pages/{pageId}
+          method: get
+          cors: true
+
+  createSubscriptionType:
+    handler: handler.createSubscriptionType
+    events:
+      - http:
+          path: api/v1/users/{userId}/subscribers/{subscriberId}/subscriptions/
+          method: post
+          cors: true
+
+  updateSubscriptionType:
+    handler: handler.updateSubscriptionType
+    events:
+      - http:
+          path: api/v1/users/{userId}/subscribers/{subscriberId}/subscriptions/
+          method: put
+          cors: true
+
+  deleteSubscriptionType:
+    handler: handler.deleteSubscriptionType
+    events:
+      - http:
+          path: api/v1/users/{userId}/subscribers/{subscriberId}/subscriptions/{subscriptionId}
+          method: delete
+          cors: true
+
+  getSubscriptionType:
+    handler: handler.getSubscriptionType
+    events:
+      - http:
+          path: api/v1/users/{userId}/subscribers/{subscriberId}/subscriptions/{subscriptionId}
+          method: get
+          cors: true

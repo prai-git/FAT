@@ -1,0 +1,168 @@
+# Welcome to Serverless!
+#
+# This file is the main config file for your service.
+# It's very minimal at this point and uses default values.
+# You can always add more config options for more control.
+# We've included some commented out config examples here.
+# Just uncomment any of them to get that config option.
+#
+# For full config options, check the docs:
+#    docs.serverless.com
+#
+# Happy Coding!
+
+service: foodanytime-user-service
+
+# You can pin your service to only deploy with a specific Serverless version
+# Check out our docs for more details
+# frameworkVersion: "=X.X.X"
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+
+# you can overwrite defaults here
+stage: dev
+region: us-east-1
+
+functions:
+  createUser:
+    handler: handler.createUser
+    events:
+      - http:
+          path: api/v1/users/
+          method: post
+          cors: true
+
+  updateUser:
+    handler: handler.updateUser
+    events:
+      - http:
+          path: api/v1/users/
+          method: put
+          cors: true
+
+  getUserById:
+    handler: handler.getUserById
+    events:
+      - http:
+          path: api/v1/users/{userId}
+          method: get
+          cors: true
+
+  getUserByName:
+    handler: handler.getUserByName
+    events:
+      - http:
+          path: api/v1/users/names/{userName}
+          method: get
+          cors: true
+
+  getUserByPhone:
+    handler: handler.getUserByPhone
+    events:
+      - http:
+          path: api/v1/users/phones/{phoneNumber}
+          method: get
+          cors: true
+  
+  createUserAddress:
+    handler: handler.createUserAddress
+    events:
+      - http:
+          path: api/v1/users/{userId}/addresses
+          method: post
+          cors: true
+
+  updateUserAddress:
+    handler: handler.updateUserAddress
+    events:
+      - http:
+          path: api/v1/users/{userId}/addresses
+          method: put
+          cors: true
+
+  getUserAddress:
+    handler: handler.getUserAddress
+    events:
+      - http:
+          path: api/v1/users/{userId}/addresses
+          method: get
+          cors: true
+
+  createUserLocation:
+    handler: handler.createUserLocation
+    events:
+      - http:
+          path: api/v1/users/{userId}/locations
+          method: post
+          cors: true
+
+  updateUserLocation:
+    handler: handler.updateUserLocation
+    events:
+      - http:
+          path: api/v1/users/{userId}/addresses
+          method: put
+          cors: true
+
+  getUserLocation:
+    handler: handler.getUserLocation
+    events:
+      - http:
+          path: api/v1/users/{userId}/addresses
+          method: get
+          cors: true
+
+  createUserSupplier:
+    handler: handler.createUserSupplier
+    events:
+      - http:
+          path: api/v1/users/{userId}/suppliers
+          method: post
+          cors: true
+
+  updateUserSupplier:
+    handler: handler.updateUserSupplier
+    events:
+      - http:
+          path: api/v1/users/{userId}/suppliers
+          method: put
+          cors: true
+
+  getUserSupplier:
+    handler: handler.getUserSupplier
+    events:
+      - http:
+          path: api/v1/users/{userId}/suppliers
+          method: get
+          cors: true
+
+  createUserBuyer:
+    handler: handler.createUserBuyer
+    events:
+      - http:
+          path: api/v1/users/{userId}/buyers
+          method: post
+          cors: true
+
+  updateUserBuyer:
+    handler: handler.updateUserBuyer
+    events:
+      - http:
+          path: api/v1/users/{userId}/buyers
+          method: put
+          cors: true
+
+  getUserBuyer:
+    handler: handler.getUserBuyer
+    events:
+      - http:
+          path: api/v1/users/{userId}/buyers
+          method: get
+          cors: true
+
+
+
+        
+

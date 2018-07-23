@@ -1,0 +1,166 @@
+/// user Service
+endpoints:
+  POST - https://vuflhjm9de.execute-api.us-east-1.amazonaws.com/prod/api/v1/users
+  PUT - https://vuflhjm9de.execute-api.us-east-1.amazonaws.com/prod/api/v1/users
+  DELETE - https://vuflhjm9de.execute-api.us-east-1.amazonaws.com/prod/api/v1/users/{userId}
+  GET - https://vuflhjm9de.execute-api.us-east-1.amazonaws.com/prod/api/v1/users/{userId}
+  GET - https://vuflhjm9de.execute-api.us-east-1.amazonaws.com/prod/api/v1/users/names/{userName}
+  GET - https://vuflhjm9de.execute-api.us-east-1.amazonaws.com/prod/api/v1/users/emails/{userEmail}
+  GET - https://vuflhjm9de.execute-api.us-east-1.amazonaws.com/prod/api/v1/users/names/{userName}/devices/{deviceId}
+  GET - https://vuflhjm9de.execute-api.us-east-1.amazonaws.com/prod/api/v1/users/names/{userName}/devices
+  POST - https://vuflhjm9de.execute-api.us-east-1.amazonaws.com/prod/api/v1/users/{userId}/userDetails
+  PUT - https://vuflhjm9de.execute-api.us-east-1.amazonaws.com/prod/api/v1/users/{userId}/userDetails
+  DELETE - https://vuflhjm9de.execute-api.us-east-1.amazonaws.com/prod/api/v1/users/{userId}/details/{userDetailsId}
+  GET - https://vuflhjm9de.execute-api.us-east-1.amazonaws.com/prod/api/v1/users/{userId}/details/{userDetailsId}
+functions:
+  createUser: user-service-prod-createUser
+  updateUser: user-service-prod-updateUser
+  deleteUser: user-service-prod-deleteUser
+  getUserById: user-service-prod-getUserById
+  getUserByName: user-service-prod-getUserByName
+  getUserByEmail: user-service-prod-getUserByEmail
+  getUserByNameAndDevice: user-service-prod-getUserByNameAndDevice
+  getdevicesByUserName: user-service-prod-getdevicesByUserName
+  createUserDetails: user-service-prod-createUserDetails
+  updateUserDetails: user-service-prod-updateUserDetails
+  deleteUserDetails: user-service-prod-deleteUserDetails
+  getUserDetailsById: user-service-prod-getUserDetailsById
+
+
+  //image-serviceNone
+endpoints:
+  POST - https://2463i7asv1.execute-api.us-east-1.amazonaws.com/prod/api/v1/users/{userId}/events
+  PUT - https://2463i7asv1.execute-api.us-east-1.amazonaws.com/prod/api/v1/users/{userId}/events
+  DELETE - https://2463i7asv1.execute-api.us-east-1.amazonaws.com/prod/api/v1/users/{userId}/events/{eventId}
+  GET - https://2463i7asv1.execute-api.us-east-1.amazonaws.com/prod/api/v1/users/{userId}/events/{eventId}
+  GET - https://2463i7asv1.execute-api.us-east-1.amazonaws.com/prod/api/v1/users/{userId}/events
+  POST - https://2463i7asv1.execute-api.us-east-1.amazonaws.com/prod/api/v1/users/{userId}/events/{eventId}/images
+  PUT - https://2463i7asv1.execute-api.us-east-1.amazonaws.com/prod/api/v1/users/{userId}/events/{eventId}/images
+  DELETE - https://2463i7asv1.execute-api.us-east-1.amazonaws.com/prod/api/v1/users/{userId}/events/{eventId}/images/{imageId}
+  GET - https://2463i7asv1.execute-api.us-east-1.amazonaws.com/prod/api/v1/users/{userId}/events/{eventId}/images/{imageId}
+  GET - https://2463i7asv1.execute-api.us-east-1.amazonaws.com/prod/api/v1/users/{userId}/events/{eventId}/images
+  POST - https://2463i7asv1.execute-api.us-east-1.amazonaws.com/prod/api/v1/users/{userId}/events/{eventId}/passwords
+  PUT - https://2463i7asv1.execute-api.us-east-1.amazonaws.com/prod/api/v1/users/{userId}/events/{eventId}/passwords
+  PUT - https://2463i7asv1.execute-api.us-east-1.amazonaws.com/prod/api/v1/users/{userId}/events/{eventId}/validate
+  DELETE - https://2463i7asv1.execute-api.us-east-1.amazonaws.com/prod/api/v1/users/{userId}/events/{eventId}/passwords
+  GET - https://2463i7asv1.execute-api.us-east-1.amazonaws.com/prod/api/v1/users/{userId}/events/{eventId}/passwords
+  GET - https://2463i7asv1.execute-api.us-east-1.amazonaws.com/prod/api/v1/users/{userId}/events/counts
+  GET - https://2463i7asv1.execute-api.us-east-1.amazonaws.com/prod/api/v1/users/{userId}/images/counts
+  POST - https://2463i7asv1.execute-api.us-east-1.amazonaws.com/prod/api/v1/users/{userId}/paymants/create
+  GET - https://2463i7asv1.execute-api.us-east-1.amazonaws.com/prod/api/v1/users/{userId}/payments/{paymentId}
+  GET - https://2463i7asv1.execute-api.us-east-1.amazonaws.com/prod/api/v1/users/{userId}/orders/{orderId}
+  GET - https://2463i7asv1.execute-api.us-east-1.amazonaws.com/prod/api/v1/users/{userId}/payments
+functions:
+  createEvent: pt360-image-service-prod-createEvent
+  updateEvent: pt360-image-service-prod-updateEvent
+  deleteEvent: pt360-image-service-prod-deleteEvent
+  getEventById: pt360-image-service-prod-getEventById
+  getEvents: pt360-image-service-prod-getEvents
+  createImage: pt360-image-service-prod-createImage
+  updateImage: pt360-image-service-prod-updateImage
+  deleteImage: pt360-image-service-prod-deleteImage
+  getImageById: pt360-image-service-prod-getImageById
+  getImages: pt360-image-service-prod-getImages
+  createEventPassword: pt360-image-service-prod-createEventPassword
+  updateEventPassword: pt360-image-service-prod-updateEventPassword
+  validateEventPassword: pt360-image-service-prod-validateEventPassword
+  deleteEventPassword: pt360-image-service-prod-deleteEventPassword
+  getEventPassword: pt360-image-service-prod-getEventPassword
+  getEventCount: pt360-image-service-prod-getEventCount
+  getImageCount: pt360-image-service-prod-getImageCount
+  createPayment: pt360-image-service-prod-createPayment
+  getPaymentById: pt360-image-service-prod-getPaymentById
+  getPaymentByOrderId: pt360-image-service-prod-getPaymentByOrderId
+  getPaymentByUserId: pt360-image-service-prod-getPaymentByUserId
+
+
+// admin service
+ndpoints:
+  GET - https://81z5n73bfc.execute-api.us-east-1.amazonaws.com/prod/api/v1/users/all
+  GET - https://81z5n73bfc.execute-api.us-east-1.amazonaws.com/prod/api/v1/users/latest/{count}
+  GET - https://81z5n73bfc.execute-api.us-east-1.amazonaws.com/prod/api/v1/app/settings/{key}
+  GET - https://81z5n73bfc.execute-api.us-east-1.amazonaws.com/prod/api/v1/app/settings
+  PUT - https://81z5n73bfc.execute-api.us-east-1.amazonaws.com/prod/api/v1/app/settings
+functions:
+  getAllUsers: pt360-admin-service-prod-getAllUsers
+  getLatestUsers: pt360-admin-service-prod-getLatestUsers
+  getSettingsByKey: pt360-admin-service-prod-getSettingsByKey
+  getAppSettings: pt360-admin-service-prod-getAppSettings
+  updateAppSettings: pt360-admin-service-prod-updateAppSettings
+
+  ////////////////
+  SNS/SMS service
+  endpoints:
+  POST - https://radzkt59m4.execute-api.us-east-1.amazonaws.com/prod/api/v1/ses/email
+  POST - https://radzkt59m4.execute-api.us-east-1.amazonaws.com/prod/api/v1/sns/message
+functions:
+  sendMail: pt360-ses-service-prod-sendMail
+  sendMessage: pt360-ses-service-prod-sendMessage
+
+
+
+  ////////////////////////////////////////////////////
+  subscriber service
+   None
+endpoints:
+  POST - https://ak9oadqypc.execute-api.us-east-1.amazonaws.com/prod/api/v1/users/{userId}/subscribers
+  PUT - https://ak9oadqypc.execute-api.us-east-1.amazonaws.com/prod/api/v1/users/{userId}/subscribers
+  DELETE - https://ak9oadqypc.execute-api.us-east-1.amazonaws.com/prod/api/v1/users/{userId}/subscribers/{subscriberId}
+  GET - https://ak9oadqypc.execute-api.us-east-1.amazonaws.com/prod/api/v1/users/{userId}/subscribers/{subscriberId}
+  POST - https://ak9oadqypc.execute-api.us-east-1.amazonaws.com/prod/api/v1/users/{userId}/subscribers/{subscriberId}/details
+  PUT - https://ak9oadqypc.execute-api.us-east-1.amazonaws.com/prod/api/v1/users/{userId}/subscribers/{subscriberId}/details
+  DELETE - https://ak9oadqypc.execute-api.us-east-1.amazonaws.com/prod/api/v1/users/{userId}/subscribers/{subscriberId}/details/{detailsId}
+  GET - https://ak9oadqypc.execute-api.us-east-1.amazonaws.com/prod/api/v1/users/{userId}/subscribers/{subscriberId}/details/{detailsId}
+  POST - https://ak9oadqypc.execute-api.us-east-1.amazonaws.com/prod/api/v1/users/{userId}/subscribers/{subscriberId}/pages
+  PUT - https://ak9oadqypc.execute-api.us-east-1.amazonaws.com/prod/api/v1/users/{userId}/subscribers/{subscriberId}/pages
+  DELETE - https://ak9oadqypc.execute-api.us-east-1.amazonaws.com/prod/api/v1/users/{userId}/subscribers/{subscriberId}/pages/{pageId}
+  GET - https://ak9oadqypc.execute-api.us-east-1.amazonaws.com/prod/api/v1/users/{userId}/subscribers/{subscriberId}/pages/{pageId}
+  POST - https://ak9oadqypc.execute-api.us-east-1.amazonaws.com/prod/api/v1/users/{userId}/subscribers/{subscriberId}/subscriptions
+  PUT - https://ak9oadqypc.execute-api.us-east-1.amazonaws.com/prod/api/v1/users/{userId}/subscribers/{subscriberId}/subscriptions
+  DELETE - https://ak9oadqypc.execute-api.us-east-1.amazonaws.com/prod/api/v1/users/{userId}/subscribers/{subscriberId}/subscriptions/{subscriptionId}
+  GET - https://ak9oadqypc.execute-api.us-east-1.amazonaws.com/prod/api/v1/users/{userId}/subscribers/{subscriberId}/subscriptions/{subscriptionId}
+functions:
+  createSubscriber: pt360-subscriber-service-prod-createSubscriber
+  updateSubscriber: pt360-subscriber-service-prod-updateSubscriber
+  deleteSubscriber: pt360-subscriber-service-prod-deleteSubscriber
+  getSubscriberById: pt360-subscriber-service-prod-getSubscriberById
+  createSubscriberDetails: pt360-subscriber-service-prod-createSubscriberDetails
+  updateSubscriberDetails: pt360-subscriber-service-prod-updateSubscriberDetails
+  deleteSubscriberDetails: pt360-subscriber-service-prod-deleteSubscriberDetails
+  getSubscriberDetailsById: pt360-subscriber-service-prod-getSubscriberDetailsById
+  createSubscriberPage: pt360-subscriber-service-prod-createSubscriberPage
+  updateSubscriberPage: pt360-subscriber-service-prod-updateSubscriberPage
+  deleteSubscriberPage: pt360-subscriber-service-prod-deleteSubscriberPage
+  getSubscriberPageById: pt360-subscriber-service-prod-getSubscriberPageById
+  createSubscriptionType: pt360-subscriber-service-prod-createSubscriptionType
+  updateSubscriptionType: pt360-subscriber-service-prod-updateSubscriptionType
+  deleteSubscriptionType: pt360-subscriber-service-prod-deleteSubscriptionType
+  getSubscriptionType: pt360-subscriber-service-prod-getSubscriptionType
+  
+
+
+  // payment Service
+  None
+endpoints:
+  POST - https://k3a6za0f86.execute-api.us-east-1.amazonaws.com/prod/api/v1/users/{userId}/paymants/create
+  GET - https://k3a6za0f86.execute-api.us-east-1.amazonaws.com/prod/api/v1/users/{userId}/payments/{paymentId}
+  GET - https://k3a6za0f86.execute-api.us-east-1.amazonaws.com/prod/api/v1/users/{userId}/orders/{orderId}
+  GET - https://k3a6za0f86.execute-api.us-east-1.amazonaws.com/prod/api/v1/users/{userId}/payments
+  POST - https://k3a6za0f86.execute-api.us-east-1.amazonaws.com/prod/api/v1/users/{userId}/licenses/create
+  GET - https://k3a6za0f86.execute-api.us-east-1.amazonaws.com/prod/api/v1/users/{userId}/licenses/{id}
+  GET - https://k3a6za0f86.execute-api.us-east-1.amazonaws.com/prod/api/v1/users/{userId}/subscribers/{subscriberId}/licenses
+  GET - https://k3a6za0f86.execute-api.us-east-1.amazonaws.com/prod/api/v1/users/{userId}/subscribers/{subscriberId}/licenses/count
+  GET - https://k3a6za0f86.execute-api.us-east-1.amazonaws.com/prod/api/v1/users/{userId}/licenses/{id}/count
+  DELETE - https://k3a6za0f86.execute-api.us-east-1.amazonaws.com/prod/api/v1/users/{userId}/licenses/{id}
+functions:
+  createPayment: pt360-payment-service-prod-createPayment
+  getPaymentById: pt360-payment-service-prod-getPaymentById
+  getPaymentByOrderId: pt360-payment-service-prod-getPaymentByOrderId
+  getPaymentByUserId: pt360-payment-service-prod-getPaymentByUserId
+  createLicense: pt360-payment-service-prod-createLicense
+  getLicensesById: pt360-payment-service-prod-getLicensesById
+  getLicensesBysubscriberId: pt360-payment-service-prod-getLicensesBysubscriberId
+  getCountBySubscriberId: pt360-payment-service-prod-getCountBySubscriberId
+  getCountById: pt360-payment-service-prod-getCountById
+  deleteLicense: pt360-payment-service-prod-deleteLicense
+
